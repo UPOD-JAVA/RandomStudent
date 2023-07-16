@@ -13,15 +13,15 @@ public class FileReader {
                 int numLines = 0;
 
                 while (scanner.hasNextLine()) {
-                    // TODO: Dosyanın kaç satır içerdiğini bulun
-
+                    ++numLines;
+                    scanner.nextLine();
                 }
 
                 String[] studentList = new String[numLines];
                 scanner = new Scanner(file);
 
                 for (int i = 0; i < numLines; ++i) {
-                    // TODO: Dosyadan öğrenci listesini okuyun
+                    studentList[i] = scanner.nextLine();
                 }
 
                 scanner.close();

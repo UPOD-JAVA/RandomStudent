@@ -6,8 +6,11 @@ public class StudentListManager {
             int j = 0;
 
             for (int i = 0; i < newStudentList.length; ++i) {
-                // TODO: Öğrenciyi kaldırmak için bu döngüyü tamamlayın
+                if (i == index) {
+                    ++j;
+                }
 
+                newStudentList[i] = studentList[j++];
             }
 
             return newStudentList;

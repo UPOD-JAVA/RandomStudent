@@ -18,9 +18,9 @@ public class Main {
                 int index = random.nextInt(studentList.length);
                 String randomStudent = studentList[index];
                 Gender gender = getGenderByLastCharacter(randomStudent);
-                // TODO: Öğrencinin isim sonundaki cinsiyet belirtme karakterini kaldırın
+                randomStudent = randomStudent.substring(0, randomStudent.length() - 2);
                 System.out.println(i + 1 + "-" + randomStudent + " " + gender.getPostfix());
-                // TODO: Seçilen öğrenciyi listeden kaldırmak için ilgili işlemleri yapın
+                studentList = studentListManager.removeStudentFromArray(studentList, index);
             }
 
         } else {
@@ -29,10 +29,7 @@ public class Main {
     }
 
     private static Gender getGenderByLastCharacter(String studentName) {
-        // TODO: İsim sonundaki karaktere göre cinsiyeti belirleyin
-
-        return null;
+        char lastCharacter = studentName.charAt(studentName.length() - 1);
+        return Character.toLowerCase(lastCharacter) == 'e' ? Gender.MALE : Gender.FEMALE;
     }
-
-
 }
