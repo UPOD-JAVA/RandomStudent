@@ -8,6 +8,7 @@ public class StudentListManager {
             for (int i = 0; i < newStudentList.length; ++i) {
                 if (i == index) {
                     ++j;
+                    System.out.println("yeni branch açıldı.");
                 }
 
                 newStudentList[i] = studentList[j++];
